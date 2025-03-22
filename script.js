@@ -178,7 +178,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const apiUrl =
       "https://script.google.com/macros/s/AKfycbxy9a_F_FcpAZKwDHT89U96SFVqdnPdYawgdMy70N6S_6tuNY2kFrOcCCzFddSEiwRgGA/exec";
-
+    toggleBtn.click();
+    modal.style.display = "none";
     try {
       const response = await fetch(apiUrl, {
         method: "POST",
@@ -192,7 +193,5 @@ document.addEventListener("DOMContentLoaded", function () {
       console.error("Ошибка:", error);
       alert("Не удалось отправить данные");
     }
-    toggleBtn.click();
-    modal.style.display = "none";
   });
 });
