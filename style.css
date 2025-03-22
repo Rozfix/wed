@@ -1,0 +1,582 @@
+@font-face {
+  font-family: "GoodVibesPro"; /* Название шрифта */
+  src: url("fonts/GoodVibesPro.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "UKIJChik"; /* Название шрифта */
+  src: url("fonts/UKIJChiK.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f8f8f8;
+}
+
+span {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+p {
+  font-family: "GoodVibesPro", sans-serif;
+  font-size: 24px;
+}
+ul {
+  padding: 30px 0;
+  list-style-position: inside; /* Маркер будет внутри блока */
+}
+li::marker {
+  margin-right: 10px; /* Отступ маркера от текста */
+}
+li {
+  font-family: "GoodVibesPro", sans-serif;
+  font-size: 24px;
+  text-align: justify;
+}
+.main {
+  display: flex;
+  justify-content: center;
+  max-width: 1200px;
+  min-height: 100vh;
+  margin: auto;
+}
+
+.header {
+  padding-bottom: 40px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 100px;
+  background: linear-gradient(to bottom, #ffffff, #c0c0c0);
+  box-shadow: 5px 5px 5px 5px grey;
+}
+
+#ps {
+  text-align: right;
+}
+
+.logo {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 170px;
+  max-height: 170px;
+  margin-top: -50%;
+  object-fit: contain;
+}
+
+.header_invite {
+  padding-bottom: 30px;
+}
+.header_invite p {
+  font-size: 61px;
+  text-align: center;
+  line-height: 1;
+}
+.persons {
+  padding-bottom: 30px;
+}
+.persons p {
+  font-size: 60px;
+  text-align: center;
+  line-height: 1;
+}
+
+.text {
+  padding-bottom: 30px;
+}
+
+.text p {
+  text-align: justify;
+}
+.union {
+  font-size: 48px;
+}
+
+.date {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+.date p {
+  font-family: "UKIJChik";
+  font-size: 48px;
+  text-align: center;
+}
+
+.date span {
+  font-family: "UKIJChik";
+  text-align: center;
+  font-size: 30px;
+}
+
+#static-date {
+  text-align: center;
+}
+.date-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+#toggle-countdown {
+  position: absolute;
+  right: -60px;
+  top: 35px;
+}
+.countdown {
+  display: none;
+}
+.countdown ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+}
+.countdown ul li {
+  font-family: "UKIJChik";
+  list-style-type: none;
+  font-size: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.countdown ul li span {
+  position: relative;
+  display: block;
+  font-size: 48px;
+  color: #000;
+}
+
+.countdown ul li.separator {
+  font-family: monospace;
+  font-size: 48px;
+  line-height: 1;
+  color: #000;
+}
+
+.countdown ul li:first-of-type {
+  margin-right: 5rem;
+}
+
+.side {
+  height: 100%;
+  width: auto;
+  max-height: 1500px;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.toggle-btn {
+  margin-left: 10px;
+  padding: 5px 8px;
+  font-size: 14px;
+  border: none;
+  background: #444;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+  z-index: 10;
+}
+
+.toggle-btn:hover {
+  background: #666;
+}
+
+.box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: relative;
+  padding-bottom: 20px;
+}
+.link_place {
+  height: 50px;
+}
+.link_place img {
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  border-radius: 25px;
+  padding: 6px;
+  transition: opacity 0.3s;
+  transition: background-color 0.3s;
+}
+.hover-img {
+  opacity: 0;
+  display: none;
+}
+.link_place:hover .hover-img {
+  display: block;
+  background-color: #50c878;
+  opacity: 1;
+}
+.link_place:hover .default-img {
+  display: none;
+  opacity: 0;
+}
+.link_place a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.link_place a::after {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  height: 80px;
+  width: 1px;
+  background-color: #000;
+}
+
+.box_item {
+  max-width: 45%;
+}
+.head_box::before,
+.head_box::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #000; /* Линия; можно изменить цвет и толщину */
+  max-width: 48px;
+}
+
+.head_box::before {
+  margin-right: 10px;
+}
+
+.head_box::after {
+  margin-left: 10px;
+}
+.head_box {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.adress_place {
+  font-size: 14px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 70%;
+  height: 1px;
+  background-color: black;
+}
+
+.button {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  background-color: black;
+  color: #50c878;
+  text-align: center;
+  padding: 10px 40px;
+  border-radius: 6px;
+}
+
+.button:hover {
+  background-color: #50c878;
+  color: #000000;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+/* Стили для модального окна */
+.modal {
+  display: none; /* По умолчанию скрыто */
+  position: fixed;
+  bottom: 10%;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон */
+}
+
+/* Контент модального окна */
+.modal-content {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 50%;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+/* Кнопка закрытия (крестик) */
+.close {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+  width: 100%;
+}
+label {
+  font-size: 18px;
+  display: block;
+  margin-bottom: 5px;
+}
+.hidden {
+  display: none;
+}
+.submit-btn {
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+}
+.submit-btn:hover {
+  background-color: #50c878;
+  color: black;
+}
+
+.item {
+  width: 100%;
+  max-width: 200px;
+}
+.item input[type="checkbox"],
+.item input[type="radio"] {
+  margin: 5px 0;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+.item input[type="text"] {
+  font-size: 16px;
+  max-width: 200px;
+}
+.item input + span {
+  border: solid 1px black;
+  border-radius: 5px;
+  padding: 5px 0;
+  margin: -22px 0 0 0;
+  display: block;
+}
+
+.item input + span:hover {
+  border-color: #013022;
+  box-shadow: 0 0 10px #013022;
+}
+.item input[type="checkbox"]:checked + span,
+.item input[type="radio"]:checked + span {
+  background-color: #013022;
+  color: white;
+  border-radius: 5px;
+  padding: 5px 0;
+  margin-top: -22px;
+}
+#allergyInput {
+  margin: auto;
+  font-size: 16px;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+}
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+@media only screen and (max-width: 1024px) {
+  .main {
+    justify-content: unset;
+  }
+  .link_place a::after {
+    height: 50px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .side {
+    max-height: 1800px;
+  }
+
+  .box {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .head_box::before,
+  .head_box::after {
+    max-width: 100%;
+  }
+  .box_item {
+    max-width: 100%;
+    width: 100%;
+  }
+  .link_place a::after {
+    content: none;
+  }
+
+  .place {
+    position: relative;
+    padding-bottom: 10px;
+  }
+  .place::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Отступ линии от текста */
+    width: 100%; /* Длина линии */
+    height: 1px; /* Толщина линии */
+    background-color: black;
+  }
+  .link_place {
+    margin: 20px 0 10px 0;
+  }
+  .box::after {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 490px) {
+  .container {
+    padding-top: 40px;
+  }
+  .logo {
+    max-width: 60px;
+    max-height: 60px;
+  }
+  .content {
+    max-width: 150px;
+  }
+  .side {
+    max-height: 896px;
+  }
+
+  .header {
+    padding-bottom: 10px;
+  }
+  .header_invite {
+    padding-bottom: 10px;
+  }
+
+  .text {
+    padding-bottom: 10px;
+  }
+  p {
+    font-size: 16px;
+    margin: 0 -30px;
+  }
+  .header_invite p {
+    font-size: 24px;
+  }
+  .union {
+    font-size: 24px;
+  }
+  .persons {
+    padding-bottom: 10px;
+  }
+  .persons p {
+    font-size: 24px;
+  }
+  .date {
+    padding-bottom: 10px;
+  }
+  .date p {
+    font-size: 20px;
+  }
+  .date span {
+    font-size: 16px;
+  }
+  .countdown ul li {
+    margin: 0;
+    font-size: 12px;
+  }
+  .countdown ul li:first-of-type {
+    margin-right: 1rem;
+  }
+  .countdown ul li span {
+    font-size: 20px;
+  }
+  .countdown ul li.separator {
+    font-size: 20px;
+  }
+  li {
+    font-size: 16px;
+    margin: 0 -30px;
+  }
+  .link_place {
+    height: auto;
+  }
+  .link_place img {
+    width: 24px;
+    height: 24px;
+  }
+  .head_box {
+    font-size: 14px;
+    margin: 5px -30px;
+  }
+  #toggle-countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    max-width: 20px;
+    max-height: 20px;
+    margin-top: 10px;
+  }
+  .place {
+    padding-bottom: 0px;
+  }
+  .place::after {
+    content: none;
+  }
+  .box::after {
+    width: 141%;
+  }
+  .button {
+    padding: 5px 25px;
+    width: 100%;
+  }
+}
